@@ -1,17 +1,45 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./CSS/style.css";
+import Header from "./JSX/Header"
+import Students from "./JSX/Students"
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+function MainBody() {
+  const whatWeWillLearn = "React JS";
+  const totalLecture = "Total Lecture";
+  const numberOfLecture = 3;
+
+  return (
+    <div>
+      <p>
+        In this course we will be learning {whatWeWillLearn} by building Taskopedia
+      </p>
+      <p>{totalLecture} - {numberOfLecture}</p>
+      <ul>
+        <li>Basic Foundation</li>
+        <li>Functional and class components</li>
+      </ul>
+      {/* <div>
+        Enter Task : <input maxLength={8} placeholder="Test" readOnly={false}></input>
+      </div> */}
+    </div>
+  );
+}
+
+
+function Footer() {
+  return (
+    <p style={{ color: "gray", backgroundColor: "black" }}>Happy Coding!</p>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <div>
+    <Header></Header>
+    <MainBody></MainBody>
+    <Students></Students>
+    <Footer></Footer>
+  </div>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
